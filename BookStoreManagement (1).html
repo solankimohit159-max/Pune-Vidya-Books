@@ -1,0 +1,1455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pune Vidya Books | Premium Educational Store</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --primary-hover: #4338ca;
+            --primary-light: #eef2ff;
+            --secondary: #f50b0b;
+            --dark: #0f172a;
+            --light-bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #334155;
+            --text-muted: #64748b;
+            --border: #f1f5f9;
+            --border-hover: #ede2f0;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+            --radius-lg: 16px;
+            --radius-md: 12px;
+            --radius-sm: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-main);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-hover);
+            padding: 1rem 6%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .logo i {
+            background: linear-gradient(135deg, var(--primary), #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 1.6rem;
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 10px 18px;
+            border-radius: 9999px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.875rem;
+            transition: all 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--text-main);
+        }
+
+        .btn-ghost:hover {
+            background: var(--primary-light);
+            color: var(--primary);
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-hover);
+            transform: translateY(-1px);
+        }
+
+        .btn-admin {
+            background: #0f172a;
+            color: #f8fafc;
+            border: 1px solid #334155;
+        }
+
+        .btn-admin:hover {
+            background: #1e293b;
+        }
+
+        .cart-btn {
+            background: var(--dark);
+            color: white;
+            position: relative;
+            border-radius: 9999px;
+            padding: 10px 20px;
+        }
+
+        .cart-badge {
+            background: var(--secondary);
+            color: white;
+            font-weight: 800;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            margin-left: 4px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+            color: white;
+            padding: 3.5rem 6%;
+            border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+            margin-bottom: 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 650px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            padding: 6px 14px;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #a5b4fc;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            color: #c7d2fe;
+            font-size: 1.05rem;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--dark);
+            letter-spacing: -0.5px;
+        }
+
+        .category-tabs {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding-bottom: 8px;
+            margin-bottom: 2rem;
+            scrollbar-width: none;
+        }
+
+        .category-tabs::-webkit-scrollbar {
+            display: none;
+        }
+
+        .tab-btn {
+            padding: 10px 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-hover);
+            border-radius: 9999px;
+            cursor: pointer;
+            white-space: nowrap;
+            font-weight: 600;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            transition: all 0.2s ease;
+        }
+
+        .tab-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            gap: 24px;
+            margin-bottom: 4rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-xl);
+            border-color: transparent;
+        }
+
+        .card-tag {
+            align-self: flex-start;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--primary);
+            background: var(--primary-light);
+            padding: 4px 10px;
+            border-radius: 9999px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .card-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 6px;
+        }
+
+        .card-author {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+        }
+
+        .price {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--dark);
+        }
+
+        .btn-add {
+            background: var(--light-bg);
+            color: var(--dark);
+            border: 1px solid var(--border-hover);
+            border-radius: var(--radius-sm);
+            padding: 8px 14px;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .btn-add:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .btn-delete-card {
+            background: #fef2f2;
+            color: #ef4444;
+            border: 1px solid #fee2e2;
+            border-radius: var(--radius-sm);
+            padding: 8px 12px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            margin-left: 6px;
+        }
+
+        .btn-delete-card:hover {
+            background: #ef4444;
+            color: #ffffff;
+        }
+
+        /* Admin Controls Bar */
+        .admin-bar {
+            display: none;
+            background: #1e1b4b;
+            color: #fff;
+            padding: 12px 6%;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.875rem;
+        }
+
+        .admin-bar.active {
+            display: flex;
+        }
+
+        /* Supplier Section */
+        .supplier-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            margin-bottom: 4rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .supplier-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+            margin-top: 1.5rem;
+        }
+
+        .supplier-card {
+            padding: 20px;
+            border-radius: var(--radius-md);
+            background: var(--light-bg);
+            border: 1px solid var(--border);
+        }
+
+        .supplier-card h4 {
+            color: var(--dark);
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .supplier-card p {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        /* Modal Overlay */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(4px);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+
+        .modal.show {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: var(--shadow-xl);
+            transform: scale(0.95);
+            transition: transform 0.25s ease;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal.show .modal-content {
+            transform: scale(1);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--light-bg);
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            cursor: pointer;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            color: var(--dark);
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--border-hover);
+            border-radius: var(--radius-sm);
+            font-size: 0.95rem;
+            outline: none;
+        }
+
+        /* Payment Selectors */
+        .payment-options {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-bottom: 1.25rem;
+        }
+
+        .pay-option {
+            border: 1.5px solid var(--border-hover);
+            border-radius: var(--radius-sm);
+            padding: 12px 8px;
+            text-align: center;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        .pay-option.active {
+            border-color: var(--primary);
+            background: var(--primary-light);
+            color: var(--primary);
+        }
+
+        /* UPI Success Tick */
+        .success-modal-content {
+            background: #fff;
+            border-radius: var(--radius-lg);
+            padding: 2.5rem 2rem;
+            max-width: 340px;
+            width: 90%;
+            text-align: center;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .tick-circle-wrap {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 1.25rem;
+        }
+
+        .tick-circle {
+            stroke-dasharray: 166;
+            stroke-dashoffset: 166;
+            stroke-width: 3;
+            stroke: #16a34a;
+            fill: none;
+            animation: tick-circle-draw 0.5s ease-out forwards;
+        }
+
+        .tick-check {
+            stroke-dasharray: 48;
+            stroke-dashoffset: 48;
+            stroke-width: 4;
+            stroke: #16a34a;
+            fill: none;
+            animation: tick-check-draw 0.3s 0.5s ease-out forwards;
+        }
+
+        @keyframes tick-circle-draw {
+            to { stroke-dashoffset: 0; }
+        }
+
+        @keyframes tick-check-draw {
+            to { stroke-dashoffset: 0; }
+        }
+
+        .upi-success-title {
+            font-weight: 800;
+            font-size: 1.15rem;
+            color: var(--dark);
+            margin-bottom: 6px;
+        }
+
+        .upi-success-sub {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Cart Styling */
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .cart-total {
+            font-weight: 800;
+            text-align: right;
+            margin-top: 1.5rem;
+            font-size: 1.2rem;
+            color: var(--dark);
+        }
+
+        .trash-btn {
+            color: #ef4444;
+            background: #fef2f2;
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+        }
+
+        /* Official Invoice */
+        .official-invoice-card {
+            background: #ffffff;
+            border: 2px solid #cbd5e1;
+            padding: 32px;
+            color: #0f172a;
+            font-size: 0.85rem;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            position: relative;
+        }
+
+        .inv-top-bar {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 2px solid #0f172a;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+        }
+
+        .inv-brand {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #1e3a8a;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+        }
+
+        .inv-address {
+            font-size: 0.78rem;
+            color: #475569;
+            line-height: 1.4;
+            margin-top: 4px;
+        }
+
+        .inv-title-block {
+            text-align: right;
+        }
+
+        .inv-title-main {
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: #0f172a;
+        }
+
+        .inv-status-stamp {
+            display: inline-block;
+            background: #166534;
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 800;
+            padding: 3px 10px;
+            border-radius: 4px;
+            margin-top: 4px;
+            text-transform: uppercase;
+        }
+
+        .inv-grid-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border: 1px solid #cbd5e1;
+            margin-bottom: 20px;
+        }
+
+        .inv-grid-box {
+            padding: 12px 16px;
+        }
+
+        .inv-grid-box:first-child {
+            border-right: 1px solid #cbd5e1;
+            background: #f8fafc;
+        }
+
+        .inv-grid-title {
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: #64748b;
+            margin-bottom: 6px;
+        }
+
+        .inv-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            border: 1px solid #cbd5e1;
+        }
+
+        .inv-table th {
+            background: #1e293b;
+            color: white;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.72rem;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .inv-table td {
+            padding: 10px;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 0.82rem;
+        }
+
+        .inv-table td.num-col, .inv-table th.num-col {
+            text-align: right;
+        }
+
+        .inv-calc-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .inv-notes {
+            max-width: 250px;
+            font-size: 0.72rem;
+            color: #64748b;
+            line-height: 1.4;
+            border-left: 3px solid #1e3a8a;
+            padding-left: 10px;
+        }
+
+        .inv-totals-table {
+            width: 220px;
+            border-collapse: collapse;
+        }
+
+        .inv-totals-table td {
+            padding: 5px 0;
+            font-size: 0.85rem;
+        }
+
+        .inv-totals-table tr.grand-row td {
+            border-top: 2px solid #0f172a;
+            font-weight: 800;
+            font-size: 1.05rem;
+            color: #0f172a;
+            padding-top: 8px;
+        }
+
+        .inv-footer-stamp {
+            margin-top: 30px;
+            padding-top: 16px;
+            border-top: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: var(--dark);
+            color: white;
+            padding: 12px 20px;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: var(--shadow-xl);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 2000;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            #printableInvoice, #printableInvoice * {
+                visibility: visible;
+            }
+            #printableInvoice {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                border: 1px solid #000;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Admin Notification / Status Bar -->
+    <div class="admin-bar" id="adminBar">
+        <div><i class="fas fa-shield-halved"></i> <strong>Admin Session Active</strong>: You have catalog editing permissions.</div>
+        <div style="display: flex; gap: 10px;">
+            <button class="btn btn-primary" style="padding: 6px 14px; font-size: 0.8rem;" onclick="openModal('addBookModal')"><i class="fas fa-plus"></i> Add New Book</button>
+            <button class="btn btn-ghost" style="padding: 6px 14px; font-size: 0.8rem; color: #fff;" onclick="logout()"><i class="fas fa-right-from-bracket"></i> Exit Admin</button>
+        </div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="logo">
+            <i class="fas fa-book-bookmark"></i> Pune Vidya Books
+        </div>
+        <div class="nav-actions">
+            <!-- User Login/Profile Action -->
+            <button class="btn btn-ghost" id="userLoginBtn" onclick="openModal('userLoginModal')">
+                <i class="far fa-user"></i> <span id="userStatusText">User Login</span>
+            </button>
+            
+            <!-- Admin Login Button -->
+            <button class="btn btn-admin" id="adminLoginBtn" onclick="openModal('adminLoginModal')">
+                <i class="fas fa-lock"></i> <span>Admin Login</span>
+            </button>
+
+            <!-- Cart Trigger -->
+            <button class="btn cart-btn" onclick="openModal('cartModal')">
+                <i class="fas fa-shopping-bag"></i> Cart
+                <span class="cart-badge" id="cartCount">0</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge"><i class="fas fa-graduation-cap"></i> Academic Store</span>
+            <h1>Maharashtra Board & Entrance Exam Books</h1>
+            <p>Buy official 10th & 12th State Board textbooks, JEE, NEET, MPSC, and UPSC preparation resources with local Pune supplier support.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Catalog</h2>
+        </div>
+
+        <div class="category-tabs">
+            <button class="tab-btn active" onclick="filterCategory('all', this)">All Books</button>
+            <button class="tab-btn" onclick="filterCategory('10th Board', this)">10th MH Board</button>
+            <button class="tab-btn" onclick="filterCategory('12th Board', this)">12th MH Board</button>
+            <button class="tab-btn" onclick="filterCategory('JEE/NEET', this)">JEE & NEET</button>
+            <button class="tab-btn" onclick="filterCategory('UPSC/MPSC', this)">UPSC & MPSC</button>
+        </div>
+
+        <div class="product-grid" id="productContainer"></div>
+
+        <div class="supplier-section">
+            <h2 class="section-title" style="margin-bottom: 6px;"><i class="fas fa-map-pin" style="color: var(--primary);"></i> Pune Wholesale Suppliers Directory</h2>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">Contact primary book agencies located in Pune:</p>
+            
+            <div class="supplier-grid">
+                <div class="supplier-card">
+                    <h4><i class="fas fa-store"></i> Pragati Book Centre</h4>
+                    <p><strong>Location:</strong> Appa Balwant Chowk (ABC), Budhwar Peth</p>
+                    <p><strong>Specialty:</strong> Engineering, JEE/NEET & MH Board</p>
+                    <p><strong>Contact:</strong> +91 020 2445 2254</p>
+                </div>
+                <div class="supplier-card">
+                    <h4><i class="fas fa-store"></i> International Book Service</h4>
+                    <p><strong>Location:</strong> Deccan Gymkhana, Pune</p>
+                    <p><strong>Specialty:</strong> UPSC, MPSC & Competitive Exams</p>
+                    <p><strong>Contact:</strong> +91 020 2567 0101</p>
+                </div>
+                <div class="supplier-card">
+                    <h4><i class="fas fa-store"></i> Utkarsh Book Agency</h4>
+                    <p><strong>Location:</strong> Appa Balwant Chowk (ABC)</p>
+                    <p><strong>Specialty:</strong> State Board Textbooks & Guides</p>
+                    <p><strong>Contact:</strong> +91 020 2448 3920</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- User Login Modal -->
+    <div class="modal" id="userLoginModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('userLoginModal')"><i class="fas fa-times"></i></span>
+            <h3 style="margin-bottom: 6px; font-weight: 800; font-size: 1.3rem;"><i class="far fa-user" style="color: var(--primary);"></i> Student / User Login</h3>
+            <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 20px;">Access your orders and fast checkout.</p>
+            <form id="userLoginForm" onsubmit="handleUserLogin(event)">
+                <div class="form-group">
+                    <label>Email or Mobile Number</label>
+                    <input type="text" id="userEmailInput" required placeholder="student@example.com">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" required placeholder="••••••••">
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Sign In</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Login Modal -->
+    <div class="modal" id="adminLoginModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('adminLoginModal')"><i class="fas fa-times"></i></span>
+            <h3 style="margin-bottom: 6px; font-weight: 800; font-size: 1.3rem;"><i class="fas fa-shield-alt" style="color: var(--dark);"></i> Store Admin Portal</h3>
+            <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 20px;">Enter administrative credentials to manage catalog.</p>
+            <form id="adminLoginForm" onsubmit="handleAdminLogin(event)">
+                <div class="form-group">
+                    <label>Admin Username</label>
+                    <input type="text" id="adminUsername" required placeholder="mohit">
+                </div>
+                <div class="form-group">
+                    <label>Admin Password</label>
+                    <input type="password" id="adminPassword" required placeholder="mohit123">
+                </div>
+                <button type="submit" class="btn btn-admin" style="width: 100%; justify-content: center; background: var(--dark);">Login as Administrator</button>
+                <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 10px; text-align: center;">Demo Admin Credentials: <strong>mohit</strong> / <strong>mohit123</strong></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add Book Modal (Admin Only) -->
+    <div class="modal" id="addBookModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('addBookModal')"><i class="fas fa-times"></i></span>
+            <h3 style="margin-bottom: 6px; font-weight: 800; font-size: 1.3rem;"><i class="fas fa-plus" style="color: var(--primary);"></i> Add New Book</h3>
+            <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 20px;">Add inventory directly to the live catalog.</p>
+            <form onsubmit="handleAddBook(event)">
+                <div class="form-group">
+                    <label>Book Title</label>
+                    <input type="text" id="newBookTitle" required placeholder="e.g., MH-CET Engineering Mathematics">
+                </div>
+                <div class="form-group">
+                    <label>Category</label>
+                    <select id="newBookCategory" required>
+                        <option value="10th Board">10th MH Board</option>
+                        <option value="12th Board">12th MH Board</option>
+                        <option value="JEE/NEET">JEE & NEET</option>
+                        <option value="UPSC/MPSC">UPSC & MPSC</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Author / Publisher</label>
+                    <input type="text" id="newBookAuthor" required placeholder="e.g., Nirali Prakashan">
+                </div>
+                <div class="form-group">
+                    <label>Price (₹)</label>
+                    <input type="number" id="newBookPrice" required min="1" placeholder="350">
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Save & Publish Book</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cartModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('cartModal')"><i class="fas fa-times"></i></span>
+            <h3 style="margin-bottom: 15px; font-weight: 800; font-size: 1.25rem;"><i class="fas fa-shopping-bag" style="color: var(--primary);"></i> Your Cart</h3>
+            <div id="cartItemsList" style="max-height: 250px; overflow-y: auto;">
+                <p style="color: var(--text-muted); text-align: center; padding: 20px 0;">Your cart is empty.</p>
+            </div>
+            <div class="cart-total" id="cartTotalDisplay">Total: ₹0</div>
+            <button class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 20px; background: var(--dark);" onclick="proceedToCheckoutModal()">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div class="modal" id="checkoutModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('checkoutModal')"><i class="fas fa-times"></i></span>
+            <h3 style="margin-bottom: 6px; font-weight: 800; font-size: 1.3rem;">Complete Order</h3>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 20px;">Select payment method and shipping address.</p>
+            
+            <form onsubmit="processPayment(event)">
+                <div class="payment-options">
+                    <div class="pay-option active" id="opt-upi" onclick="selectPaymentMode('upi')">
+                        <i class="fas fa-qrcode"></i> UPI
+                    </div>
+                    <div class="pay-option" id="opt-card" onclick="selectPaymentMode('card')">
+                        <i class="far fa-credit-card"></i> Card
+                    </div>
+                    <div class="pay-option" id="opt-cod" onclick="selectPaymentMode('cod')">
+                        <i class="fas fa-money-bill-wave"></i> Cash
+                    </div>
+                    <div class="pay-option" id="opt-emi" onclick="selectPaymentMode('emi')">
+                        <i class="fas fa-calendar-alt"></i> EMI
+                    </div>
+                </div>
+
+                <div id="upiFields">
+                    <div class="form-group">
+                        <label>UPI ID (GPay / PhonePe / Navi)</label>
+                        <input type="text" placeholder="example@upi" id="upiIdInput">
+                    </div>
+                </div>
+
+                <div id="cardFields" style="display: none;">
+                    <div class="form-group">
+                        <label>Card Number</label>
+                        <input type="text" placeholder="4532 •••• •••• 8890" maxlength="19">
+                    </div>
+                </div>
+
+                <div id="codFields" style="display: none;">
+                    <p style="font-size: 0.85rem; color: #b45309; background: #fffbeb; padding: 10px; border-radius: 6px; margin-bottom: 12px;">
+                        Pay cash directly to courier agent on delivery.
+                    </p>
+                </div>
+
+                <div id="emiFields" style="display: none;">
+                    <div class="form-group">
+                        <label>Card Number (for EMI)</label>
+                        <input type="text" placeholder="4532 •••• •••• 8890" maxlength="19" id="emiCardInput">
+                    </div>
+                    <div class="form-group">
+                        <label>Tenure</label>
+                        <select id="emiTenure" onchange="updateEmiBreakdown()" style="width: 100%; padding: 10px 12px; border-radius: var(--radius-sm); border: 1.5px solid var(--border-hover); font-size: 0.9rem; color: var(--text-main); background: #fff;">
+                            <option value="3">3 months</option>
+                            <option value="6" selected>6 months</option>
+                            <option value="9">9 months</option>
+                            <option value="12">12 months</option>
+                        </select>
+                    </div>
+                    <p id="emiBreakdown" style="font-size: 0.85rem; color: var(--primary); background: var(--primary-light); padding: 10px; border-radius: 6px; margin-bottom: 12px; font-weight: 600;">
+                        Add items to see EMI breakdown.
+                    </p>
+                    <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: -6px; margin-bottom: 12px;">
+                        Interest calculated at 13% p.a. flat rate. Processed by partner NBFC.
+                    </p>
+                </div>
+
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="custName" required placeholder="Mohit Solanki">
+                </div>
+
+                <div class="form-group">
+                    <label>Delivery Address (Maharashtra)</label>
+                    <input type="text" id="custAddress" required placeholder="Flat No 102, ABC Road, Pune">
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;" id="payBtn">Pay Now</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- UPI Payment Success Modal -->
+    <div class="modal" id="upiSuccessModal">
+        <div class="success-modal-content">
+            <div class="tick-circle-wrap">
+                <svg viewBox="0 0 64 64" width="90" height="90">
+                    <circle class="tick-circle" cx="32" cy="32" r="26.4" />
+                    <polyline class="tick-check" points="20,33 28,41 44,23" />
+                </svg>
+            </div>
+            <div class="upi-success-title">Payment Successful</div>
+            <div class="upi-success-sub" id="upiSuccessAmount">Paid via UPI</div>
+        </div>
+    </div>
+
+    <!-- Official GST Bill Invoice Modal -->
+    <div class="modal" id="invoiceModal">
+        <div class="modal-content" style="max-width: 720px; padding: 1.25rem;">
+            <span class="close-btn" onclick="closeModal('invoiceModal')"><i class="fas fa-times"></i></span>
+            
+            <div class="official-invoice-card" id="printableInvoice">
+                <div class="inv-top-bar">
+                    <div>
+                        <div class="inv-brand"><i class="fas fa-book-open"></i> Pune Vidya Books</div>
+                        <div class="inv-address">
+                            ABC Chowk, Budhwar Peth, Pune, Maharashtra - 411002<br>
+                            <strong>GSTIN:</strong> 27ABCDE1234F1Z5 | <strong>State Code:</strong> 27 (MH)<br>
+                            <strong>Contact:</strong> support@punevidyabooks.in
+                        </div>
+                    </div>
+                    <div class="inv-title-block">
+                        <div class="inv-title-main">TAX INVOICE</div>
+                        <div class="inv-status-stamp"><i class="fas fa-check"></i> PAYMENT COMPLETED</div>
+                    </div>
+                </div>
+
+                <div class="inv-grid-info">
+                    <div class="inv-grid-box">
+                        <div class="inv-grid-title">Billed To / Shipping Address</div>
+                        <strong id="invCustomerName" style="font-size: 0.95rem; color: #0f172a;">Mohit Solanki</strong>
+                        <div id="invCustomerAddress" style="color: #475569; font-size: 0.82rem; margin-top: 2px;">Pune, Maharashtra</div>
+                    </div>
+                    <div class="inv-grid-box" style="background: #ffffff;">
+                        <div class="inv-grid-title">Invoice & Order Metadata</div>
+                        <table style="width: 100%; font-size: 0.8rem; border-collapse: collapse;">
+                            <tr><td style="color: #64748b;">Invoice No:</td><td style="text-align: right; font-weight: 700;" id="invNumber">PVB-2026-0000</td></tr>
+                            <tr><td style="color: #64748b;">Date & Time:</td><td style="text-align: right; font-weight: 600;" id="invDate">--</td></tr>
+                            <tr><td style="color: #64748b;">Payment Method:</td><td style="text-align: right; font-weight: 700; text-transform: uppercase;" id="invPaymentMode">UPI</td></tr>
+                            <tr id="invEmiRow" style="display: none;"><td style="color: #64748b;">Monthly Installment:</td><td style="text-align: right; font-weight: 700;" id="invEmiAmount">—</td></tr>
+                        </table>
+                    </div>
+                </div>
+
+                <table class="inv-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 30px;">#</th>
+                            <th>Description of Books</th>
+                            <th>HSN</th>
+                            <th class="num-col">Qty</th>
+                            <th class="num-col">Rate (₹)</th>
+                            <th class="num-col">Amount (₹)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="invItemsTable"></tbody>
+                </table>
+
+                <div class="inv-calc-section">
+                    <div class="inv-notes">
+                        <strong>Important Terms:</strong><br>
+                        • Educational print books covered under standard tax rules.<br>
+                        • Returns accepted within 7 days with original invoice.<br>
+                        • Computer-generated digital bill. No physical signature required.
+                    </div>
+                    <div>
+                        <table class="inv-totals-table">
+                            <tr>
+                                <td style="color: #64748b;">Sub Total:</td>
+                                <td style="text-align: right; font-weight: 600;" id="invSubtotal">₹0.00</td>
+                            </tr>
+                            <tr>
+                                <td style="color: #64748b;">CGST (2.5%):</td>
+                                <td style="text-align: right;" id="invCgst">₹0.00</td>
+                            </tr>
+                            <tr>
+                                <td style="color: #64748b;">SGST (2.5%):</td>
+                                <td style="text-align: right;" id="invSgst">₹0.00</td>
+                            </tr>
+                            <tr class="grand-row">
+                                <td>Grand Total:</td>
+                                <td style="text-align: right;" id="invGrandTotal">₹0.00</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="inv-footer-stamp">
+                    <div style="font-size: 0.72rem; color: #64748b;">
+                        Authorized Seal: <strong>Pune Vidya Books, Pune</strong>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="width: 130px; border-bottom: 1px solid #0f172a; margin-bottom: 4px;"></div>
+                        <span style="font-size: 0.72rem; font-weight: 700; color: #0f172a;">Authorized Signatory</span>
+                    </div>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 12px; margin-top: 20px;">
+                <button class="btn btn-ghost" style="flex: 1; border: 1px solid var(--border-hover);" onclick="closeModal('invoiceModal')">Close</button>
+                <button class="btn btn-primary" style="flex: 1; justify-content: center;" onclick="window.print()"><i class="fas fa-print"></i> Print Official Bill</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle" style="color: #4ade80;"></i>
+        <span id="toastMsg">Action completed!</span>
+    </div>
+
+    <script>
+        let books = [
+            { id: 1, title: "10th SSC Mathematics Part 1 & 2", category: "10th Board", price: 240, author: "Maharashtra State Board" },
+            { id: 2, title: "10th Science & Technology Digest", category: "10th Board", price: 310, author: "Target Publications" },
+            { id: 3, title: "12th HSC Physics Guide", category: "12th Board", price: 450, author: "Navneet Publications" },
+            { id: 4, title: "12th HSC Chemistry Text Book", category: "12th Board", price: 290, author: "Maharashtra State Board" },
+            { id: 5, title: "12th HSC Mathematics & Statistics", category: "12th Board", price: 380, author: "Target Publications" },
+            { id: 6, title: "Concepts of Physics (Vol 1 & 2)", category: "JEE/NEET", price: 890, author: "H.C. Verma" },
+            { id: 7, title: "Objective Biology for NEET", category: "JEE/NEET", price: 650, author: "Trueman Series" },
+            { id: 8, title: "43 Years JEE Advanced Solved Papers", category: "JEE/NEET", price: 520, author: "Arihant Experts" },
+            { id: 9, title: "Indian Polity for UPSC", category: "UPSC/MPSC", price: 620, author: "M. Laxmikanth" },
+            { id: 10, title: "MPSC Rajyaseva Comprehensive Guide", category: "UPSC/MPSC", price: 750, author: "K'Sagar Publications" },
+            { id: 11, title: "History of Modern India (UPSC)", category: "UPSC/MPSC", price: 340, author: "Bipan Chandra" }
+        ];
+
+        let cart = [];
+        let selectedPaymentMode = 'upi';
+        let currentRole = 'guest'; // 'guest', 'user', 'admin'
+        let loggedInUser = null;
+        let currentFilter = 'all';
+
+        function renderBooks(category = 'all') {
+            currentFilter = category;
+            const container = document.getElementById('productContainer');
+            container.innerHTML = '';
+            const filtered = category === 'all' ? books : books.filter(b => b.category === category);
+
+            filtered.forEach(book => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                
+                const deleteBtnHtml = currentRole === 'admin' 
+                    ? `<button class="btn-delete-card" onclick="deleteBook(${book.id})" title="Delete Book"><i class="fas fa-trash"></i></button>` 
+                    : '';
+
+                card.innerHTML = `
+                    <div>
+                        <span class="card-tag">${book.category}</span>
+                        <h3 class="card-title">${book.title}</h3>
+                        <div class="card-author"><i class="far fa-user"></i> ${book.author}</div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="price">₹${book.price}</span>
+                        <div style="display: flex; align-items: center;">
+                            <button class="btn btn-add" onclick="addToCart(${book.id})">Add to Cart</button>
+                            ${deleteBtnHtml}
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function filterCategory(cat, element) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            element.classList.add('active');
+            renderBooks(cat);
+        }
+
+        function addToCart(bookId) {
+            const book = books.find(b => b.id === bookId);
+            cart.push(book);
+            updateCartUI();
+            showToast(`Added "${book.title.substring(0, 18)}..." to cart`);
+        }
+
+        function updateCartUI() {
+            document.getElementById('cartCount').innerText = cart.length;
+            const list = document.getElementById('cartItemsList');
+            const totalDisplay = document.getElementById('cartTotalDisplay');
+            
+            if (cart.length === 0) {
+                list.innerHTML = `<p style="color: var(--text-muted); text-align: center; padding: 20px 0;">Your cart is empty.</p>`;
+                totalDisplay.innerText = `Total: ₹0`;
+                return;
+            }
+
+            list.innerHTML = '';
+            let total = 0;
+            cart.forEach((item, index) => {
+                total += item.price;
+                const itemEl = document.createElement('div');
+                itemEl.className = 'cart-item';
+                itemEl.innerHTML = `
+                    <div>
+                        <div style="font-weight: 600; font-size: 0.9rem;">${item.title}</div>
+                        <div style="font-size: 0.85rem; color: var(--text-muted);">₹${item.price}</div>
+                    </div>
+                    <button class="trash-btn" onclick="removeFromCart(${index})"><i class="fas fa-trash-can"></i></button>
+                `;
+                list.appendChild(itemEl);
+            });
+            totalDisplay.innerText = `Total: ₹${total}`;
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        function selectPaymentMode(mode) {
+            selectedPaymentMode = mode;
+            document.querySelectorAll('.pay-option').forEach(opt => opt.classList.remove('active'));
+            document.getElementById(`opt-${mode}`).classList.add('active');
+            document.getElementById('upiFields').style.display = mode === 'upi' ? 'block' : 'none';
+            document.getElementById('cardFields').style.display = mode === 'card' ? 'block' : 'none';
+            document.getElementById('codFields').style.display = mode === 'cod' ? 'block' : 'none';
+            document.getElementById('emiFields').style.display = mode === 'emi' ? 'block' : 'none';
+            if (mode === 'emi') updateEmiBreakdown();
+        }
+
+        function getCartTotal() {
+            return cart.reduce((sum, item) => sum + item.price, 0);
+        }
+
+        function updateEmiBreakdown() {
+            const total = getCartTotal();
+            const tenure = parseInt(document.getElementById('emiTenure').value, 10);
+            const breakdownEl = document.getElementById('emiBreakdown');
+            if (total <= 0) {
+                breakdownEl.innerText = "Add items to see EMI breakdown.";
+                return;
+            }
+            const annualRate = 0.13;
+            const interest = total * annualRate * (tenure / 12);
+            const payable = total + interest;
+            const monthly = payable / tenure;
+            breakdownEl.innerText = `₹${monthly.toFixed(2)} / month for ${tenure} months (Total payable: ₹${payable.toFixed(2)})`;
+        }
+
+        function proceedToCheckoutModal() {
+            if (cart.length === 0) {
+                showToast("Your cart is empty!");
+                return;
+            }
+            closeModal('cartModal');
+            openModal('checkoutModal');
+            updateEmiBreakdown();
+        }
+
+        function processPayment(e) {
+            e.preventDefault();
+            const custName = document.getElementById('custName').value;
+            const custAddress = document.getElementById('custAddress').value;
+            const emiTenure = document.getElementById('emiTenure').value;
+
+            if (selectedPaymentMode === 'upi') {
+                const total = getCartTotal();
+                document.getElementById('upiSuccessAmount').innerText = `₹${total.toFixed(2)} paid via UPI`;
+                closeModal('checkoutModal');
+                openModal('upiSuccessModal');
+                setTimeout(() => {
+                    closeModal('upiSuccessModal');
+                    generateInvoice(custName, custAddress, emiTenure);
+                    cart = [];
+                    updateCartUI();
+                    setTimeout(() => openModal('invoiceModal'), 260);
+                }, 1600);
+                return;
+            }
+
+            generateInvoice(custName, custAddress, emiTenure);
+
+            cart = [];
+            updateCartUI();
+            closeModal('checkoutModal');
+            openModal('invoiceModal');
+        }
+
+        function generateInvoice(name, address, emiTenure) {
+            const now = new Date();
+            const invNum = 'PVB-MH-' + Math.floor(100000 + Math.random() * 900000);
+            
+            document.getElementById('invNumber').innerText = invNum;
+            document.getElementById('invDate').innerText = now.toLocaleDateString() + ' ' + now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+            document.getElementById('invCustomerName').innerText = name;
+            document.getElementById('invCustomerAddress').innerText = address;
+            document.getElementById('invPaymentMode').innerText = selectedPaymentMode === 'emi'
+                ? `EMI (${emiTenure} MONTHS)`
+                : selectedPaymentMode.toUpperCase();
+
+            const tableBody = document.getElementById('invItemsTable');
+            tableBody.innerHTML = '';
+            
+            let total = 0;
+            cart.forEach((item, idx) => {
+                total += item.price;
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${idx + 1}</td>
+                    <td>${item.title}</td>
+                    <td>4901</td>
+                    <td class="num-col">1</td>
+                    <td class="num-col">₹${item.price.toFixed(2)}</td>
+                    <td class="num-col">₹${item.price.toFixed(2)}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+
+            const cgst = total * 0.025;
+            const sgst = total * 0.025;
+            const subtotal = total - (cgst + sgst);
+
+            document.getElementById('invSubtotal').innerText = `₹${subtotal.toFixed(2)}`;
+            document.getElementById('invCgst').innerText = `₹${cgst.toFixed(2)}`;
+            document.getElementById('invSgst').innerText = `₹${sgst.toFixed(2)}`;
+            document.getElementById('invGrandTotal').innerText = `₹${total.toFixed(2)}`;
+
+            const emiRow = document.getElementById('invEmiRow');
+            if (selectedPaymentMode === 'emi' && emiTenure) {
+                const tenureNum = parseInt(emiTenure, 10);
+                const interest = total * 0.13 * (tenureNum / 12);
+                const monthly = (total + interest) / tenureNum;
+                document.getElementById('invEmiAmount').innerText = `₹${monthly.toFixed(2)} x ${tenureNum} months`;
+                emiRow.style.display = '';
+            } else {
+                emiRow.style.display = 'none';
+            }
+        }
+
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            modal.style.display = 'flex';
+            setTimeout(() => modal.classList.add('show'), 10);
+        }
+
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            modal.classList.remove('show');
+            setTimeout(() => modal.style.display = 'none', 250);
+        }
+
+        // Authentication Handlers
+        function handleUserLogin(e) {
+            e.preventDefault();
+            const email = document.getElementById('userEmailInput').value;
+            const name = email.split('@')[0];
+            
+            currentRole = 'user';
+            loggedInUser = name;
+            
+            document.getElementById('userStatusText').innerText = name;
+            document.getElementById('custName').value = name;
+            closeModal('userLoginModal');
+            showToast(`Welcome back, ${name}!`);
+        }
+
+        function handleAdminLogin(e) {
+            e.preventDefault();
+            const user = document.getElementById('adminUsername').value;
+            const pass = document.getElementById('adminPassword').value;
+
+            // Updated credentials check
+            if (user === 'mohit' && pass === 'mohit123') {
+                currentRole = 'admin';
+                document.getElementById('adminBar').classList.add('active');
+                document.getElementById('adminLoginBtn').style.display = 'none';
+                closeModal('adminLoginModal');
+                renderBooks(currentFilter);
+                showToast("Admin access granted");
+            } else {
+                showToast("Invalid admin username or password");
+            }
+        }
+
+        function logout() {
+            currentRole = 'guest';
+            document.getElementById('adminBar').classList.remove('active');
+            document.getElementById('adminLoginBtn').style.display = 'inline-flex';
+            renderBooks(currentFilter);
+            showToast("Logged out successfully");
+        }
+
+        // Admin Book Management
+        function handleAddBook(e) {
+            e.preventDefault();
+            const title = document.getElementById('newBookTitle').value;
+            const category = document.getElementById('newBookCategory').value;
+            const author = document.getElementById('newBookAuthor').value;
+            const price = parseFloat(document.getElementById('newBookPrice').value);
+
+            const newBook = {
+                id: Date.now(),
+                title,
+                category,
+                author,
+                price
+            };
+
+            books.unshift(newBook);
+            renderBooks(currentFilter);
+            closeModal('addBookModal');
+            showToast(`Added book "${title}"`);
+            e.target.reset();
+        }
+
+        function deleteBook(id) {
+            if (confirm("Are you sure you want to delete this book from inventory?")) {
+                books = books.filter(b => b.id !== id);
+                renderBooks(currentFilter);
+                showToast("Book deleted from catalog");
+            }
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMsg').innerText = message;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3000);
+        }
+
+        renderBooks();
+    </script>
+</body>
+</html>
